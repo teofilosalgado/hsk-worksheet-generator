@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Scraper: AllSet Learning",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "scrapy",
+            "justMyCode": true,
+            "cwd": "${workspaceFolder}${pathSeparator}scraper",
+            "args": [
+                "crawl",
+                "AllSetLearning",
+                "-a",
+                "hsk=1",
+                "-O",
+                "${workspaceFolder}${pathSeparator}output${pathSeparator}hsk_1.csv"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}
