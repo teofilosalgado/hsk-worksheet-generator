@@ -25,7 +25,7 @@ do
 done
 
 # Compress .csv files
-zip -qq ./output/hsk.csv.zip ./output/*.csv;
+zip -j -qq ./output/hsk.csv.zip ./output/*.csv;
 
 # Compress .pdf files
-zip -qq ./output/hsk.pdf.zip ./output/*.pdf;
+zip -j -qq ./output/hsk.pdf.zip ./output/*.pdf;
