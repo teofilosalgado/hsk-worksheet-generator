@@ -36,7 +36,7 @@ scrapy crawl AllSetLearning -a hsk=1 -O ./output/hsk_1.csv
 
 ### Generate PDF from CSV
 
-To generate a HSK `1` PDF file at `./output/hsk_1.pdf` from a given CSV vocabulary file located at `./output/hsk_1.csv`, you should run:
+To generate a PDF HSK `1` worksheet at `./output/hsk_1.pdf` from a given CSV vocabulary file located at `./output/hsk_1.csv`, you should run:
 
 ```sh
 typst compile template/main.typ output/hsk_1.pdf
@@ -46,6 +46,6 @@ typst compile template/main.typ output/hsk_1.pdf
     --input csv_file_path="../output/hsk_1.csv"
 ```
 
-The resulting PDF file should look like this:
+The resulting file should look like this:
 
 ![Sample of the resulting PDF](./sample.png)
