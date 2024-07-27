@@ -10,7 +10,7 @@
             "request": "launch",
             "module": "scrapy",
             "justMyCode": true,
-            "cwd": "${workspaceFolder}${pathSeparator}scraper",
+            "cwd": "${workspaceFolder}${pathSeparator}",
             "args": [
                 "crawl",
                 "AllSetLearning",
