@@ -24,8 +24,12 @@ do
     typst compile template/main.typ output/hsk_$level.pdf --font-path font --root . --input hsk="$level" --input csv_file_path="../output/hsk_$level.csv";
 done
 
+pushd ./output
+
 # Compress .csv files
-zip -j -qq ./output/hsk.csv.zip ./output/*.csv;
+zip -j -qq hsk.csv.zip *.csv;
 
 # Compress .pdf files
-zip -j -qq ./output/hsk.pdf.zip ./output/*.pdf;
+zip -j -qq hsk.pdf.zip *.pdf;
+
+popd
