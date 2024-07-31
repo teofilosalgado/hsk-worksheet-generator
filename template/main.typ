@@ -1,6 +1,14 @@
+// Variables to define paper type and margin sizes
+#let paper = "a4"
+#let left_margin = 2.5cm
+#let right_margin = 0.5cm
+
+// Calculate square size based on page variables
+#let square_size = (21cm - left_margin - right_margin) / 10
+
 #set page(
-  paper: "a4",
-  margin: (x: 1cm, top: 2cm, bottom:1.75cm),
+  paper: paper,
+  margin: (left: left_margin, right: right_margin, top: 2cm, bottom:1.75cm),
   header: if "hsk" in sys.inputs [
     #align(center, text(size: 16pt, weight: "bold", "HSK " + sys.inputs.hsk))
   ] else [
@@ -41,7 +49,7 @@
   block(height: auto, breakable: false)[
     // Header grid
     #grid(
-      columns: (19mm, 1fr),
+      columns: (square_size, 1fr),
       rows: (7mm),
       gutter: 0mm,
       stroke: (0.75pt + black),
@@ -65,8 +73,8 @@
     // Body grid
     #for character in chinese {
       grid(
-        columns: (19mm, 19mm, 19mm, 19mm, 19mm, 19mm, 19mm, 19mm, 19mm, 19mm),
-        rows: (19mm),
+        columns: (1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+        rows: (square_size),
         gutter: 0mm,
         stroke: (0.75pt + black),
         grid.cell(
@@ -88,16 +96,16 @@
           block(
             [
               #place(top + left, 
-                line(start: (0pt, 0pt), end: (19mm, 19mm))
+                line(start: (0pt, 0pt), end: (square_size, square_size))
               )
               #place(top + left, 
-                line(start: (0pt, 19mm), end: (19mm, 0pt))
+                line(start: (0pt, square_size), end: (square_size, 0pt))
               )
               #place(top + left, 
-                line(start: (0pt, 9.5mm), end: (19mm, 9.5mm))
+                line(start: (0pt, 9.5mm), end: (square_size, 9.5mm))
               )
               #place(top + left, 
-                line(start: (9.5mm, 0pt), end: (9.5mm, 19mm))
+                line(start: (9.5mm, 0pt), end: (9.5mm, square_size))
               )
               #block(
                 align(
@@ -118,16 +126,16 @@
           block(
             [
               #place(top + left, 
-                line(start: (0pt, 0pt), end: (19mm, 19mm))
+                line(start: (0pt, 0pt), end: (square_size, square_size))
               )
               #place(top + left, 
-                line(start: (0pt, 19mm), end: (19mm, 0pt))
+                line(start: (0pt, square_size), end: (square_size, 0pt))
               )
               #place(top + left, 
-                line(start: (0pt, 9.5mm), end: (19mm, 9.5mm))
+                line(start: (0pt, 9.5mm), end: (square_size, 9.5mm))
               )
               #place(top + left, 
-                line(start: (9.5mm, 0pt), end: (9.5mm, 19mm))
+                line(start: (9.5mm, 0pt), end: (9.5mm, square_size))
               )
               #block(
                 align(
@@ -150,16 +158,16 @@
               block(
                 [
                   #place(top + left, 
-                    line(start: (0pt, 0pt), end: (19mm, 19mm))
+                    line(start: (0pt, 0pt), end: (square_size, square_size))
                   )
                   #place(top + left, 
-                    line(start: (0pt, 19mm), end: (19mm, 0pt))
+                    line(start: (0pt, square_size), end: (square_size, 0pt))
                   )
                   #place(top + left, 
-                    line(start: (0pt, 9.5mm), end: (19mm, 9.5mm))
+                    line(start: (0pt, 9.5mm), end: (square_size, 9.5mm))
                   )
                   #place(top + left, 
-                    line(start: (9.5mm, 0pt), end: (9.5mm, 19mm))
+                    line(start: (9.5mm, 0pt), end: (9.5mm, square_size))
                   )
                 ]
               ),
@@ -171,7 +179,7 @@
   
     // Footer grid
     #grid(
-      columns: (19mm, 2fr, 1fr),
+      columns: (square_size, 1fr, 1fr),
       rows: (7mm),
       gutter: 0mm,
       stroke: (0.75pt + black),
