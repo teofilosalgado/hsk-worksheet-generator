@@ -1,7 +1,7 @@
 // Variables to define paper type and margin sizes
 #let paper = "a4"
-#let left_margin = 2.5cm
-#let right_margin = 0.5cm
+#let left_margin = 2cm
+#let right_margin = 1cm
 
 // Calculate square size based on page variables
 #let square_size = (21cm - left_margin - right_margin) / 10
