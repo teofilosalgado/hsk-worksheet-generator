@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "hsk-worksheet-generator"
-version = "0.0.3"
-description = ""
+version = "v0.0.4"
+description = "A simple set of tools to generate HSK worksheets as CSVs and PDFs files."
 authors = ["João Victor Teófilo Salgado <jvictorteo2000@hotmail.com>"]
 readme = "README.md"
 package-mode = false

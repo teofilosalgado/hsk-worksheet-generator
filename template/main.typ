@@ -23,6 +23,21 @@
   )
 )
 
+#let cell() = {
+  place(top + left, 
+    line(start: (0pt, 0pt), end: (square_size, square_size))
+  )
+  place(top + left, 
+    line(start: (0pt, square_size), end: (square_size, 0pt))
+  )
+  place(top + left, 
+    line(start: (0pt, (square_size/2)), end: (square_size, (square_size/2)))
+  )
+  place(top + left, 
+    line(start: ((square_size/2), 0pt), end: ((square_size/2), square_size))
+  )
+}
+
 #let worksheet(
   id,
   number,
@@ -95,18 +110,7 @@
           colspan: 1,
           block(
             [
-              #place(top + left, 
-                line(start: (0pt, 0pt), end: (square_size, square_size))
-              )
-              #place(top + left, 
-                line(start: (0pt, square_size), end: (square_size, 0pt))
-              )
-              #place(top + left, 
-                line(start: (0pt, 9.5mm), end: (square_size, 9.5mm))
-              )
-              #place(top + left, 
-                line(start: (9.5mm, 0pt), end: (9.5mm, square_size))
-              )
+              #cell()
               #block(
                 align(
                   center + horizon, 
@@ -125,18 +129,7 @@
           colspan: 1,
           block(
             [
-              #place(top + left, 
-                line(start: (0pt, 0pt), end: (square_size, square_size))
-              )
-              #place(top + left, 
-                line(start: (0pt, square_size), end: (square_size, 0pt))
-              )
-              #place(top + left, 
-                line(start: (0pt, 9.5mm), end: (square_size, 9.5mm))
-              )
-              #place(top + left, 
-                line(start: (9.5mm, 0pt), end: (9.5mm, square_size))
-              )
+              #cell()
               #block(
                 align(
                   center + horizon, 
@@ -155,22 +148,7 @@
           (
             grid.cell(
               colspan: 1,
-              block(
-                [
-                  #place(top + left, 
-                    line(start: (0pt, 0pt), end: (square_size, square_size))
-                  )
-                  #place(top + left, 
-                    line(start: (0pt, square_size), end: (square_size, 0pt))
-                  )
-                  #place(top + left, 
-                    line(start: (0pt, 9.5mm), end: (square_size, 9.5mm))
-                  )
-                  #place(top + left, 
-                    line(start: (9.5mm, 0pt), end: (9.5mm, square_size))
-                  )
-                ]
-              ),
+              cell()
             ),
           )
         },
@@ -179,7 +157,7 @@
   
     // Footer grid
     #grid(
-      columns: (square_size, 1fr, 1fr),
+      columns: (square_size, 5fr, 4fr),
       rows: (7mm),
       gutter: 0mm,
       stroke: (0.75pt + black),
@@ -212,3 +190,4 @@
 #for (index, result) in results.enumerate() [
   #worksheet(str(index + 1), ..result)
 ]
+
