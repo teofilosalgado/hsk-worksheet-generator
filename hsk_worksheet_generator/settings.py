@@ -1,4 +1,4 @@
-# Scrapy settings for scraper project
+# Scrapy settings for hsk_worksheet_generator project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "scraper"
+BOT_NAME = "hsk_worksheet_generator"
 
-SPIDER_MODULES = ["scraper.spiders"]
-NEWSPIDER_MODULE = "scraper.spiders"
+SPIDER_MODULES = ["hsk_worksheet_generator.spiders"]
+NEWSPIDER_MODULE = "hsk_worksheet_generator.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = "scraper (+http://www.yourdomain.com)"
+# USER_AGENT = "hsk_worksheet_generator (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {
-#    "scraper.middlewares.ScraperSpiderMiddleware": 543,
+#    "hsk_worksheet_generator.middlewares.ScraperSpiderMiddleware": 543,
 # }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#    "scraper.middlewares.ScraperDownloaderMiddleware": 543,
+#    "hsk_worksheet_generator.middlewares.ScraperDownloaderMiddleware": 543,
 # }
 
 # Enable or disable extensions
@@ -63,7 +63,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 # ITEM_PIPELINES = {
-#    "scraper.pipelines.ScraperPipeline": 300,
+#    "hsk_worksheet_generator.pipelines.ScraperPipeline": 300,
 # }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -92,5 +92,6 @@ REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 
 # Feed export settings
-FEED_EXPORTERS = {"csv": "scraper.exporters.CustomCsvItemExporter"}
+FEED_EXPORTERS = {"csv": "hsk_worksheet_generator.exporters.CustomCsvItemExporter"}
+FEED_EXPORTERS = {"mochi": "hsk_worksheet_generator.exporters.CustomMochiItemExporter"}
 FEED_EXPORT_FIELDS = ["id", "category", "chinese", "pinyin", "english"]

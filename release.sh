@@ -18,7 +18,7 @@ fi
 for level in $(eval echo {$1..$2});
 do
     # Get HSK words from AllSet Learning
-    poetry run python -m scrapy crawl AllSetLearning -L WARNING -a hsk=$level -O ./output/hsk_$level.csv;
+    python -m scrapy crawl AllSetLearning -L WARNING -a hsk=$level -O ./output/hsk_$level.csv;
 
     # Compile data to PDF
     typst compile template/main.typ output/hsk_$level.pdf --font-path font --root . --input hsk="$level" --input csv_file_path="../output/hsk_$level.csv";

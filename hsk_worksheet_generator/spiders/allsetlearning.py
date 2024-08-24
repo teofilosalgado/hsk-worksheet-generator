@@ -5,8 +5,8 @@ from scrapy.http import Response
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 
-from scraper.items import Word
-from scraper.loaders import WordLoader
+from hsk_worksheet_generator.items import Word
+from hsk_worksheet_generator.loaders import WordLoader
 
 VOCAULARY_XPATH = "//p/span/a[contains(@href, '/chinese/vocabulary/HSK')]"
 

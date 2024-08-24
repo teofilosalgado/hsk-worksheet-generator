@@ -1,0 +1,47 @@
+{
+    "~:version": 2,
+    "~:templates": {
+        "~#list": [
+            {
+                "~:id": "~:JyNTqOWw",
+                "~:name": "Flashcard",
+                "~:content": "# << chinese >>\n---\n*<< pinyin >>*\n<< english >> \n(<< category >>)",
+                "~:fields": {
+                    "~:name": {
+                        "~:id": "~:name",
+                        "~:name": "chinese",
+                        "~:pos": "1",
+                        "~:type": "~:text"
+                    },
+                    "~:HVbfyxAT": {
+                        "~:id": "~:HVbfyxAT",
+                        "~:name": "pinyin",
+                        "~:pos": "2"
+                    },
+                    "~:mBQDvQJd": {
+                        "~:id": "~:mBQDvQJd",
+                        "~:name": "english",
+                        "~:pos": "3"
+                    },
+                    "~:CvHut85d": {
+                        "~:id": "~:CvHut85d",
+                        "~:name": "category",
+                        "~:pos": "4"
+                    }
+                },
+                "~:style": {
+                    "~:text-alignment": "~:center"
+                }
+            }
+        ]
+    },
+    "~:decks": [
+        {
+            "~:name": "HSK 1 Flashcards",
+            "~:template-id": "~:JyNTqOWw",
+            "~:show-sides?": true,
+            "~:card-tag:retention-rate:show?": true,
+            "~:card-tag:progress:show?": true,
+            "~:audio-autoplay?": true,
+            "~:cards": {
+                "~#list": [
