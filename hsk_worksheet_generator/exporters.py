@@ -92,9 +92,9 @@ class CustomMochiItemExporter(BaseItemExporter):
                     position=self.position,
                     id=self._generate_id(),
                     chinese=fields["chinese"],
-                    english=fields["english"],
+                    english=fields["english"].replace('"', "'"),
                     pinyin=fields["pinyin"],
-                    category=fields["category"],
+                    category=fields["category"].replace('"', "'"),
                 )
             )
         )
