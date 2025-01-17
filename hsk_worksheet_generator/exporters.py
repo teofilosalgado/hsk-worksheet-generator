@@ -18,7 +18,6 @@ class CustomCsvItemExporter(CsvItemExporter):
 
 class CustomMochiItemExporter(BaseItemExporter):
     def __init__(self, file, **kwargs):
-        print(kwargs)
         self._configure(kwargs, dont_fail=True)
         # Keeps reference of the output file path for .zip compression later
         self.json_file_path = os.path.abspath(file.name)
@@ -73,6 +72,7 @@ class CustomMochiItemExporter(BaseItemExporter):
 
     def finish_exporting(self):
         self.json_file.write(to_bytes(self._read_file("finish_exporting.json")))
+        self.json_file.flush()
         self.json_file.close()
 
         temporary_data_file_path = os.path.join(

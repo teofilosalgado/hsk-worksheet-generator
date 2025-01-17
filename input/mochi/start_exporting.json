@@ -37,7 +37,7 @@
     },
     "~:decks": [
         {
-            "~:name": "HSK 1 Flashcards",
+            "~:name": "HSK Flashcards",
             "~:template-id": "~:JyNTqOWw",
             "~:show-sides?": true,
             "~:card-tag:retention-rate:show?": true,

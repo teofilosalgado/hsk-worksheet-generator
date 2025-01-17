@@ -32,9 +32,9 @@
                 "crawl",
                 "AllSetLearning",
                 "-a",
-                "hsk=1",
+                "hsk=3",
                 "-O",
-                "${workspaceFolder}${pathSeparator}output${pathSeparator}hsk_1.mochi"
+                "${workspaceFolder}${pathSeparator}output${pathSeparator}hsk_3.mochi"
             ],
             "console": "integratedTerminal"
         }
