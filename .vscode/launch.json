@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Scraper: AllSet Learning",
+            "name": "Scraper: AllSet Learning [CSV]",
             "type": "debugpy",
             "request": "launch",
             "module": "scrapy",
@@ -18,6 +18,23 @@
                 "hsk=1",
                 "-O",
                 "${workspaceFolder}${pathSeparator}output${pathSeparator}hsk_1.csv"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Scraper: AllSet Learning [Mochi]",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "scrapy",
+            "justMyCode": true,
+            "cwd": "${workspaceFolder}${pathSeparator}",
+            "args": [
+                "crawl",
+                "AllSetLearning",
+                "-a",
+                "hsk=1",
+                "-O",
+                "${workspaceFolder}${pathSeparator}output${pathSeparator}hsk_1.mochi"
             ],
             "console": "integratedTerminal"
         }
