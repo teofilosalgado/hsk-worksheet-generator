@@ -1,6 +1,6 @@
 # HSK Worksheet Generator
 
-A simple set of tools to automatically generate HSK worksheets as CSVs and PDFs files.
+A simple set of tools to automatically generate HSK worksheets as CSVs, [Mochi](https://mochi.cards/) flash cards and PDFs files.
 
 ## Installation
 
@@ -12,11 +12,7 @@ poetry install
 
 You will also need [Typst](https://typst.app/) installed and available on `PATH` to generate PDFs.
 
-## Usage
-
-All commands listed below should be issued from this project's root folder unless otherwise stated.
-
-### Export Vocabulary as CSV
+## Data Source
 
 This application uses the excellent [AllSet Learning Chinese Vocabulary Wiki](https://resources.allsetlearning.com/chinese/vocabulary) as its default crawler data source. Other crawlers can be implemented as long as they generate the following fields for each scrapped item:
 
@@ -28,10 +24,24 @@ This application uses the excellent [AllSet Learning Chinese Vocabulary Wiki](ht
 | pinyin   | str  | Pinyin representation                          |
 | english  | str  | English translation                            |
 
+## Usage
+
+All commands listed below should be issued from this project's root folder unless otherwise stated.
+
+### Export Vocabulary as CSV
+
 To extract HSK `1` vocabulary to a CSV file at `./output/hsk_1.csv`, you should run: 
 
 ```sh
 scrapy crawl AllSetLearning -a hsk=1 -O ./output/hsk_1.csv
+```
+
+### Export Vocabulary as Mochi
+
+To extract HSK `2` vocabulary to [Mochi](https://mochi.cards/) flashcards at `./output/hsk_1.csv`, you should run: 
+
+```sh
+scrapy crawl AllSetLearning -a hsk=2 -O ./output/hsk_2.mochi
 ```
 
 ### Generate PDF from CSV
